@@ -1,4 +1,4 @@
-alias subl='open -a "Sublime Text 2"'
+alias subl='open -a "Sublime Text"'
 alias haroo='open -a "Haroopad"'
 
 # GIT

@@ -10,14 +10,21 @@
 # Aliases
 #
 
+# docker machine
+alias dmstart='docker-machine start default'
+alias dmenv='eval "$(docker-machine env default)"'
+
 # docker container list
-alias dkrl='docker ps -l'
+alias dkl='docker ps -l'
 
 # delete stopped containers
-alias dkrrma='docker rm -v `docker ps -a -q -f status=exited`'
+alias dkrma='docker rm -v `docker ps -a -q -f status=exited`'
 
 # delete all images
-alias dkrrmia='docker rmi $(docker images -q)'
+alias dkrmia='docker rmi $(docker images -q)'
 
 # kill running container
-alias dkrkila='docker kill $(docker ps -q)' 
+alias dkkila='docker kill $(docker ps -q)'
+
+# delete all <none> images
+alias dkrmia2='docker rmi $(docker images -f "dangling=true" -q)'

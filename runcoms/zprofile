@@ -33,6 +33,9 @@ fi
 # Paths
 #
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/Works/go
+
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
@@ -43,10 +46,11 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  $GOPATH/bin
+  $GOROOT/bin
   /usr/local/{bin,sbin}
   $path
 )
-
 #
 # Less
 #

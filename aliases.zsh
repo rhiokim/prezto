@@ -1,11 +1,6 @@
 alias subl='open -a "Sublime Text"'
 alias haroo='open -a "Haroopad"'
-
-# GIT
-alias ga='git add'
-alias gs='git status'
-alias gl='git log --graph --abbrev-commit --decorate --date=relative --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
-alias gl2='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n""          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)" --all'
+alias code='open -a "Visual Studio Code"'
 
 # Application Demons
 
@@ -17,3 +12,10 @@ alias stop_couch='/usr/bin/sudo launchctl unload ~/Library/LaunchAgents/homebrew
 # MongoDB
 alias start_mongo='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
 alias stop_mongo='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
+
+# Nw.js
+# alias nw='/Users/rhio/Works/my/haroopad/lib/nwjs-v0.12.3-osx-x64/nwjs.app/Contents/MacOS/nwjs'
+# alias nw13='/Users/rhio/Works/my/haroopad/lib/nwjs-sdk-v0.13.4-osx-x64/nwjs.app/Contents/MacOS/nwjs'
+# alias nw16='/Users/rhio/Works/my/haroopad/lib/nwjs-sdk-v0.16.0-osx-x64/nwjs.app/Contents/MacOS/nwjs'
+# alias nw17='/Users/rhio/Works/my/haroopad/lib/nwjs-sdk-v0.17.6-osx-x64/nwjs.app/Contents/MacOS/nwjs'
+alias nwjc='/Users/rhio/Works/my/haroopad/lib/nwjs-sdk-v0.17.6-osx-x64/nwjc'

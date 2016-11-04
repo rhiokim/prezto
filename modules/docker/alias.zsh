@@ -11,8 +11,15 @@
 #
 
 # docker machine
-alias dmstart='docker-machine start default'
-alias dmenv='eval "$(docker-machine env default)"'
+function evalDockerEnv() {
+  eval "$(dkm env $1)"
+}
+
+alias dkm='docker-machine'
+alias dkmstart='dkm start'
+alias dkmstop='dkm stop'
+alias dkmrestart='dkm restart'
+alias dkmenv=evalDockerEnv
 
 # docker container list
 alias dkl='docker ps -l'
@@ -21,10 +28,10 @@ alias dkl='docker ps -l'
 alias dkrma='docker rm -v `docker ps -a -q -f status=exited`'
 
 # delete all images
-alias dkrmia='docker rmi $(docker images -q)'
+alias dkrmifa='docker rmi $(docker images -q)'
 
 # kill running container
 alias dkkila='docker kill $(docker ps -q)'
 
 # delete all <none> images
-alias dkrmia2='docker rmi $(docker images -f "dangling=true" -q)'
+alias dkrmia='docker rmi $(docker images -f "dangling=true" -q)'

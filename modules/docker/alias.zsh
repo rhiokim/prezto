@@ -15,14 +15,25 @@ function evalDockerEnv() {
   eval "$(dkm env $1)"
 }
 
+function createDockerMachine() {
+  docker-machine create --driver=virtualbox $1
+}
+
 alias dkm='docker-machine'
+alias dkml='dkm ls'
 alias dkmstart='dkm start'
 alias dkmstop='dkm stop'
 alias dkmrestart='dkm restart'
+alias dkmrm='dkm rm'
 alias dkmenv=evalDockerEnv
+alias dkmunset='dkmenv --unset'
+
+alias dkmc=createDockerMachine
 
 # docker container list
-alias dkl='docker ps -l'
+alias dkc='docker ps -l'
+
+alias dki='docker images'
 
 # delete stopped containers
 alias dkrma='docker rm -v `docker ps -a -q -f status=exited`'

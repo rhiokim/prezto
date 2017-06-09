@@ -25,6 +25,7 @@ alias dkmstart='dkm start'
 alias dkmstop='dkm stop'
 alias dkmrestart='dkm restart'
 alias dkmrm='dkm rm'
+alias dkmssh='dkm ssh'
 alias dkmenv=evalDockerEnv
 alias dkmunset='dkmenv --unset'
 

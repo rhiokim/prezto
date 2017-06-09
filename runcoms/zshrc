@@ -20,3 +20,10 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+export NVM_DIR="/Users/rhio/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Users/rhio/.config/yarn/global/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/rhio/.config/yarn/global/node_modules/tabtab/.completions/electron-forge.zsh

@@ -1,3 +1,19 @@
+#
+# A two-line, Powerline-inspired theme that displays contextual information.
+#
+# This theme requires a patched Powerline font, get them from
+# https://github.com/Lokaltog/powerline-fonts.
+#
+# Authors:
+#   Isaac Wolkerstorfer <i@agnoster.net>
+#   Jeff Sandberg <paradox460@gmail.com>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Patrick Bos <egpbos@gmail.com>
+#
+# Screenshots:
+#   http://i.imgur.com/0XIWX.png
+#
+
 # Load dependencies.
 pmodload 'helper'
 
@@ -38,27 +54,30 @@ function build_prompt {
   if $git_status; then
     prompt_segment green black '${(e)git_info[prompt]}${git_info[status]}'
   fi
-  prompt_end
+
+  if [[ -n "$python_info" ]]; then
+    prompt_paradox_start_segment white black '${(e)python_info[virtualenv]}'
+  fi
+
+  prompt_paradox_end_segment
 }
 
-start_time=$SECONDS
-function prompt_paradox_preexec {
-  start_time=$SECONDS
-}
+prompt_paradox_print_elapsed_time() {
+  local end_time=$(( SECONDS - _prompt_paradox_start_time ))
+  local hours minutes seconds remainder
 
-function calc_elapsed_time {
-  if [[ $timer_result -ge 3600 ]]; then
-    let "timer_hours = $timer_result / 3600"
-    let "remainder = $timer_result % 3600"
-    let "timer_minutes = $remainder / 60"
-    let "timer_seconds = $remainder % 60"
-    print -P "%B%F{red}>>> elapsed time ${timer_hours}h${timer_minutes}m${timer_seconds}s%b"
-  elif [[ $timer_result -ge 60 ]]; then
-    let "timer_minutes = $timer_result / 60"
-    let "timer_seconds = $timer_result % 60"
-    print -P "%B%F{yellow}>>> elapsed time ${timer_minutes}m${timer_seconds}s%b"
-  elif [[ $timer_result -gt 10 ]]; then
-    print -P "%B%F{green}>>> elapsed time ${timer_result}s%b"
+  if (( end_time >= 3600 )); then
+    hours=$(( end_time / 3600 ))
+    remainder=$(( end_time % 3600 ))
+    minutes=$(( remainder / 60 ))
+    seconds=$(( remainder % 60 ))
+    print -P "%B%F{red}>>> elapsed time ${hours}h${minutes}m${seconds}s%b"
+  elif (( end_time >= 60 )); then
+    minutes=$(( end_time / 60 ))
+    seconds=$(( end_time % 60 ))
+    print -P "%B%F{yellow}>>> elapsed time ${minutes}m${seconds}s%b"
+  elif (( end_time > 10 )); then
+    print -P "%B%F{green}>>> elapsed time ${end_time}s%b"
   fi
 }
 
@@ -66,15 +85,25 @@ function prompt_paradox_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
 
+  # Format PWD.
+  _prompt_paradox_pwd=$(promptpwd)
+
   # Get Git repository information.
   if (( $+functions[git-info] )); then
     git_status=git-info
   fi
-  timer_result=$(($SECONDS-$start_time))
-  if [[ $timer_result -gt 10 ]]; then
-    calc_elapsed_time
+
+  # Get Python environment information.
+  if (( $+functions[python-info] )); then
+    python-info
   fi
-  start_time=$SECONDS
+
+  # Calculate and print the elapsed time.
+  prompt_paradox_print_elapsed_time
+}
+
+function prompt_paradox_preexec {
+  _prompt_paradox_start_time="$SECONDS"
 }
 
 function prompt_paradox_setup {
@@ -109,6 +138,9 @@ function prompt_paradox_setup {
   zstyle ':prezto:module:git:info:keys' format \
     'prompt' '$(coalesce "%b" "%p" "%c")%s' \
     'status' ' %A%B%S%a%d%m%r%U%u'
+
+  # %v - virtualenv name.
+  zstyle ':prezto:module:python:info:virtualenv' format 'virtualenv:%v'
 
   # Define prompts.
   PROMPT='

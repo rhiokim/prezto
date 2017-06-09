@@ -38,7 +38,10 @@ zstyle ':prezto:load' pmodule \
   'node' \
   'phabricator' \
   'docker' \
-  'osx'
+  'osx' \
+  'autosuggestions' \
+  'syntax-highlighting' \
+  'tmux'
 
 #
 # Autosuggestions
@@ -125,7 +128,7 @@ zstyle ':prezto:module:prompt' theme 'agnoster'
 #
 
 # Auto start a session when Zsh is launched in a local terminal.
-# zstyle ':prezto:module:screen:auto-start' local 'yes'
+zstyle ':prezto:module:screen:auto-start' local 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
 # zstyle ':prezto:module:screen:auto-start' remote 'yes'
@@ -143,13 +146,13 @@ zstyle ':prezto:module:prompt' theme 'agnoster'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'line' \
-#   'cursor' \
-#   'root'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+   'main' \
+   'brackets' \
+   'pattern' \
+   'line' \
+   'cursor' \
+   'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \

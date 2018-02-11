@@ -30,3 +30,9 @@ export NVM_DIR="/Users/rhio/.nvm"
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# theme
+autoload -Uz promptinit
+promptinit
+prompt powerlevel9k
+# prompt powerline

@@ -1,6 +1,7 @@
 alias subl='open -a "Sublime Text"'
 alias haroo='open -a "Haroopad"'
 alias code='open -a "Visual Studio Code"'
+alias codei='open -a "Visual Studio Code - Insiders"'
 
 # Application Demons
 

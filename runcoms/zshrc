@@ -19,6 +19,10 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/Works/go
+export PATH=$PATH:$HOME/Works/go/bin:$GOPATH/bin
+
 export PATH="$HOME/.yarn/bin:$PATH"
 
 export NVM_DIR="/Users/rhio/.nvm"

@@ -189,3 +189,13 @@ unset zfunction{s,}
 zstyle -a ':prezto:load' pmodule 'pmodules'
 pmodload "$pmodules[@]"
 unset pmodules
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Custom by rhio
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

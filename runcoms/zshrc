@@ -42,3 +42,7 @@ export NVM_DIR="/Users/rhio/.nvm"
 autoload -Uz promptinit
 prompt powerlevel9k
 # prompt powerline
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /Users/rhio/.nvm/versions/node/v11.6.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/rhio/.nvm/versions/node/v11.6.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh

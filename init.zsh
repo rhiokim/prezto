@@ -198,4 +198,9 @@ export NVM_DIR="$HOME/.nvm"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# deno
+# export PATH=$PATH:/Users/rhio/Works/test/depot_tools
+export PATH="/Users/rhio/.deno/bin:$PATH"
+
+
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

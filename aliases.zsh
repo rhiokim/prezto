@@ -23,3 +23,6 @@ alias stop_mongo='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.
 # alias nw16='/Users/rhio/Works/my/haroopad/lib/nwjs-sdk-v0.16.0-osx-x64/nwjs.app/Contents/MacOS/nwjs'
 # alias nw20='/Users/rhio/Works/my/haroopad/lib/nwjs-sdk-v0.20.1-osx-x64/nwjs.app/Contents/MacOS/nwjs'
 # alias nwjc='/Users/rhio/Works/my/haroopad/lib/nwjs-sdk-v0.17.6-osx-x64/nwjc'
+
+# Music
+alias music='npx pipcorn'

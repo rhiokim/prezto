@@ -17,6 +17,8 @@ if ! autoload -Uz is-at-least || ! is-at-least "$min_zsh_version"; then
 fi
 unset min_zsh_version
 
+export TERM="xterm-256color"
+
 # zprezto convenience updater
 # The function is surrounded by ( ) instead of { } so it starts in a subshell
 # and won't affect the environment of the calling shell

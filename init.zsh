@@ -206,6 +206,9 @@ export EDITOR="$VISUAL"
 # export PATH=$PATH:/Users/rhio/Works/test/depot_tools
 export PATH="/Users/rhio/.deno/bin:$PATH"
 
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Hyperterm Compatability (see https://github.com/zeit/hyperterm/issues/360)
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"

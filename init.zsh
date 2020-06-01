@@ -221,3 +221,18 @@ export LC_ALL="en_US.UTF-8"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# exa for ls command
+if [[ ! -a "/usr/local/bin/exa" ]]; then
+    echo "🥳 \nbrew install exa\nhttps://github.com/bigH/git-fuzzy"
+fi
+
+# delta for git-diff
+if [[ ! -a "/usr/local/bin/delta" ]]; then
+    echo "🥳 \nbrew install delta\nhttps://github.com/dandavison/delta"
+fi
+
+# bat for cat
+if [[ ! -a "/usr/local/bin/bat" ]]; then
+    echo "🥳 \nbrew install bat\nhttps://github.com/sharkdp/bat"
+fi
+

@@ -26,3 +26,7 @@ alias stop_mongo='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.
 
 # Music
 alias music='npx pipcorn'
+
+# exa: brew install exa
+alias ls='exa'
+alias cat='bat'

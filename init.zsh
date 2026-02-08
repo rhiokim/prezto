@@ -221,9 +221,9 @@ export LC_ALL="en_US.UTF-8"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# exa for ls command
-if [[ ! -a "/usr/local/bin/exa" ]]; then
-    echo "🥳 \nbrew install exa\nhttps://github.com/bigH/git-fuzzy"
+# eza for ls command
+if [[ ! -a "/usr/local/bin/eza" ]]; then
+    echo "🥳 \nbrew install eza\nhttps://github.com/eza-community/eza"
 fi
 
 # delta for git-diff
